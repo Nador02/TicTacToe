@@ -1,0 +1,82 @@
+.container{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    grid-template-rows:1fr 4fr 1fr;
+    background-color:#efefef;
+}
+.header{
+    display:grid;
+    grid-column:2/3;
+    grid-row:1/2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr;
+}
+.playerBox{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.players{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:18vw;
+    height:7vh;
+    border-radius:25px;
+    border:5px solid white;
+    font-family:futura;
+    font-size:1.5rem;
+    color:white;
+}
+#player1{
+    background-color:#ff3b3f;
+}
+#player2{
+    background-color:#caebf2;
+}
+.board{
+    display:grid;
+    grid-column:2/3;
+    grid-row:2/3;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    border-left:8px solid #a9a9a9;
+    border-bottom:8px solid #a9a9a9;
+}
+.square{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-right:8px solid #a9a9a9;
+    border-top:8px solid #a9a9a9;
+    font-family:futura;
+    font-size:6rem;
+    color:white;
+}
+.restart{
+    display:flex;
+    grid-column:2/3;
+    grid-row:3/4;
+    justify-content:center;
+    align-items:center;
+
+}
+.clear{
+    width:20vw;
+    height:7vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#a9a9a9;
+    color:white;
+    border:5px solid white;
+    font-family:futura;
+    font-size:1.5rem;
+}
+.popup{
+    grid-column:2/3;
+    grid-row:2/3;
+    visibility:hidden;
+}
