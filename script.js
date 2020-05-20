@@ -37,6 +37,12 @@ let instantiate = () =>{
 let restartBoard = () =>{
     boxes.forEach(box => box.textContent = "");
 }
+let restartGame = () =>{
+    restartBoard();
+    player1.wins = 0;
+    player2.wins = 0;
+    instantiate();
+}
 let play = function(){
     if(this.textContent == ""){
         if(turn % 2 == 0){
@@ -55,6 +61,14 @@ let play = function(){
         }
 
     }
+}
+let checkTie = () =>{
+    let test = true;
+    boxes.forEach(box =>{
+        if(box.textContent == "")
+            test = false;
+    });
+    return test;
 }
 let whoWon = (box) =>{
     if(box.textContent == "X")
@@ -95,11 +109,15 @@ let checkWin = () =>{
         whoWon(box7);
         return true;
     }
+    else if(checkTie()){
+        return true;
+    }
     else
         return false;
+    
 }
 instantiate();
 boxes.forEach(box => box.addEventListener("click",play));
 start.addEventListener("click",create);
-restart.addEventListener("click",restartBoard);
+restart.addEventListener("click",restartGame);
 
